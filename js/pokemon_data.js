@@ -316,6 +316,54 @@ var pokemon_data = {
 		"curve": "MF",
 		"evolution_lv": 101,
 		"evolution_p": -1
+	},
+	"23": {
+		"name": "Ekans",
+		"dex": 23,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/ekans.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/ekans.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 20,
+		"egg_pokemon": 23,
+		"curve": "MF",
+		"evolution_lv": 22,
+		"evolution_p": 24
+	},
+	"24": {
+		"name": "Arbok",
+		"dex": 24,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/arbok.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/arbok.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 20,
+		"egg_pokemon": 23,
+		"curve": "MF",
+		"evolution_lv": 101,
+		"evolution_p": -1
+	},
+	"25": {
+		"name": "Pikachu",
+		"dex": 25,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/pikachu.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/pikachu.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 10,
+		"egg_pokemon": 25,
+		"curve": "MF",
+		"evolution_lv": 25,
+		"evolution_p": 26
+	},
+	"26": {
+		"name": "Raichu",
+		"dex": 24,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/raichu.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/raichu.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 10,
+		"egg_pokemon": 25,
+		"curve": "MF",
+		"evolution_lv": 101,
+		"evolution_p": -1
 	}
 }
 
