@@ -47,6 +47,10 @@ chrome.storage.sync.get('currentPokemon', function(result) {
 		}
 		document.getElementById('pkmn_message').innerHTML = message;
 
+		chrome.storage.sync.get(['pc'], function(result) {
+			document.getElementById('egg').innerHTML = "You Have: " + result.pc.length + " eggs";
+		})
+
 	} else {
 		console.log("YAINT POKEMON");	
 	}

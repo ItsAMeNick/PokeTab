@@ -43,11 +43,20 @@ function checkGetEgg() {
 		if (color === "dc143c") {
 			alert("You've found an egg!");
 			chrome.browserAction.setBadgeBackgroundColor({color: "#C0C0C0"});
+
+			chrome.storage.sync.get(['pc'], function(result) {
+				var pc = result.pc;
+				console.log(pc);
+				pc.push(createNewEgg());
+				chrome.storage.sync.set({'pc': pc});
+			})
+			location.reload();
 		}	
 	});
 }
 
 
+//ACTIVE FUNCTIONS
 
 function hatchCurrent() {
 	console.log("Hatching Egg");
@@ -90,6 +99,18 @@ function giveEXPCurrent() {
 		chrome.storage.sync.set({'currentPokemon': pkmn});
 	});
 	location.reload();
+}
+
+function createNewEgg() {
+	var possible_pokemon = [];
+	for (i in pokemon_data) {
+		if (possible_pokemon.indexOf(pokemon_data[i].egg_pokemon) < 0) {
+			possible_pokemon.push(pokemon_data[i].egg_pokemon);
+		}
+	}
+	var new_pkmn = new Pokemon(possible_pokemon[Math.floor(Math.random()*possible_pokemon.length)])
+	console.log(new_pkmn);
+	return new_pkmn;
 }
 
 chrome.storage.sync.get(['currentPokemon'], function(result) {
