@@ -15,6 +15,11 @@ chrome.storage.sync.get('currentPokemon', function(result) {
 		document.getElementById('pkmn_image').src = pkmn.sprite;
 		document.getElementById('pkmn_image').alt = pkmn.name;
 
+		//Add egg animation
+		if (pkmn.isEgg) {
+			document.getElementById('image_class').classList.add("egg_image");
+		}
+
 		//Fill in the exp bar
 		if (!pkmn.isEgg) {
 			if (pkmn.level === 100) {

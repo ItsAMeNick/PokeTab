@@ -11,6 +11,18 @@
 				src: url("./fonts/PokemonGB.ttf");
 			}
 
+			@keyframes egg {
+				0% {
+					transform: scale(1.5);
+				}
+				50% {
+					transform: scale(1.25);
+				}
+				100% {
+					transform: scale(1.5);
+				}
+			}
+
 			button {
 				height: 30px;
 				width: 30px;
@@ -55,6 +67,11 @@
 				bottom: 45px;
 				left: 80px;
 			}
+			.egg_image {
+				animation-name: egg;
+				animation-duration: 6s;
+				animation-iteration-count: infinite;
+			}
 			.exp_bar {
 				width: 100%;
 			}
@@ -77,7 +94,7 @@
 
 		<div class="backdrop">
 			<img src="/images/background.png" alt="Backdrop" id="">
-			<div class="pokemon_image">
+			<div class="pokemon_image" id="image_class">
 				<img src="" alt="" id="pkmn_image">
 			</div>
 			<progress class="exp_bar" id="exp_bar" value="0" max="0">
