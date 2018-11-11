@@ -364,6 +364,102 @@ var pokemon_data = {
 		"curve": "MF",
 		"evolution_lv": 101,
 		"evolution_p": -1
+	},
+	"27": {
+		"name": "Sandshrew",
+		"dex": 27,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/sandshrew.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/sandshrew.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 20,
+		"egg_pokemon": 27,
+		"curve": "MF",
+		"evolution_lv": 22,
+		"evolution_p": 28
+	},
+	"28": {
+		"name": "Sandslash",
+		"dex": 28,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/sandslash.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/sandslash.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 20,
+		"egg_pokemon": 27,
+		"curve": "MF",
+		"evolution_lv": 101,
+		"evolution_p": -1
+	},
+	"29": {
+		"name": "Nidoran",
+		"dex": 29,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/nidoran-f.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/nidoran-f.gif",
+		"gender_ratio": 0,
+		"egg_cycles": 20,
+		"egg_pokemon": 29,
+		"curve": "MS",
+		"evolution_lv": 16,
+		"evolution_p": 30
+	},
+	"30": {
+		"name": "Nidorina",
+		"dex": 30,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/nidorina.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/nidorina.gif",
+		"gender_ratio": 0,
+		"egg_cycles": 20,
+		"egg_pokemon": 29,
+		"curve": "MS",
+		"evolution_lv": 32,
+		"evolution_p": 31
+	},
+	"31": {
+		"name": "Nidoqueen",
+		"dex": 31,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/nidoqueen.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/nidoqueen.gif",
+		"gender_ratio": 0,
+		"egg_cycles": 20,
+		"egg_pokemon": 29,
+		"curve": "MS",
+		"evolution_lv": 101,
+		"evolution_p": -1
+	},
+	"32": {
+		"name": "Nidoran",
+		"dex": 32,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/nidoran-m.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/nidoran-m.gif",
+		"gender_ratio": 1,
+		"egg_cycles": 20,
+		"egg_pokemon": 32,
+		"curve": "MS",
+		"evolution_lv": 16,
+		"evolution_p": 33
+	},
+	"33": {
+		"name": "Nidorino",
+		"dex": 33,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/nidorino.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/nidorino.gif",
+		"gender_ratio": 1,
+		"egg_cycles": 20,
+		"egg_pokemon": 32,
+		"curve": "MS",
+		"evolution_lv": 32,
+		"evolution_p": 34
+	},
+	"34": {
+		"name": "Nidoking",
+		"dex": 34,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/nidoking.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/nidoking.gif",
+		"gender_ratio": 1,
+		"egg_cycles": 20,
+		"egg_pokemon": 32,
+		"curve": "MS",
+		"evolution_lv": 101,
+		"evolution_p": -1
 	}
 }
 
