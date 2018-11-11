@@ -232,6 +232,90 @@ var pokemon_data = {
 		"curve": "MF",
 		"evolution_lv": 101,
 		"evolution_p": -1
+	},
+	"16": {
+		"name": "Pidgey",
+		"dex": 16,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/pidgey.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/pidgey.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 15,
+		"egg_pokemon": 16,
+		"curve": "MS",
+		"evolution_lv": 18,
+		"evolution_p": 17
+	},
+	"17": {
+		"name": "Pidgeotto",
+		"dex": 17,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/pidgeotto.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/pidgeotto.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 15,
+		"egg_pokemon": 16,
+		"curve": "MS",
+		"evolution_lv": 36,
+		"evolution_p": 18
+	},
+	"18": {
+		"name": "Pidgeot",
+		"dex": 18,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/pidgeot.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/pidgeot.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 15,
+		"egg_pokemon": 16,
+		"curve": "MS",
+		"evolution_lv": 101,
+		"evolution_p": -1
+	},
+	"19": {
+		"name": "Rattata",
+		"dex": 19,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/rattata.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/rattata.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 15,
+		"egg_pokemon": 19,
+		"curve": "MF",
+		"evolution_lv": 20,
+		"evolution_p": 20
+	},
+	"20": {
+		"name": "Raticate",
+		"dex": 20,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/raticate.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/raticate.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 15,
+		"egg_pokemon": 19,
+		"curve": "MF",
+		"evolution_lv": 101,
+		"evolution_p": -1
+	},
+	"21": {
+		"name": "Spearow",
+		"dex": 21,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/spearow.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/spearow.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 15,
+		"egg_pokemon": 21,
+		"curve": "MF",
+		"evolution_lv": 20,
+		"evolution_p": 22
+	},
+	"22": {
+		"name": "Fearow",
+		"dex": 22,
+		"image_src": "https://img.pokemondb.net/sprites/black-white/anim/normal/fearow.gif",
+		"image_shiny": "https://img.pokemondb.net/sprites/black-white/anim/shiny/fearow.gif",
+		"gender_ratio": 0.5,
+		"egg_cycles": 15,
+		"egg_pokemon": 21,
+		"curve": "MF",
+		"evolution_lv": 101,
+		"evolution_p": -1
 	}
 }
 
