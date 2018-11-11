@@ -1,0 +1,45 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../js/pokemon_data.js"></script>
+		<script type="text/javascript" src="../js/pokemon.js"></script>
+		<style>
+			@font-face {
+				font-family: "Pokemon GB";
+				src: "/fonts/Pokemon GB.tff";
+			}
+			body {
+				width: 300px;
+				height: 400px;
+				position: relative;
+				vertical-align: middle;
+				font-family: 'Pokemon GB';
+
+				background: #EDEFED;
+			}
+			img {
+				display: block;
+				width: 200px;
+				height: auto;
+				margin: auto;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<h1>
+			Welcome to PokeTab!
+		</h1>
+		<p>
+			This is a chrome browser extension that lets you collect and train pokemon while using the internet.
+		</p>
+		<p>
+			Here's an egg to get started!
+		</p>
+		<img src = "../images/egg.png" />
+		<form action="./getFirstEgg.html" method="get">
+			<button type="submit">Accept</button>
+		</form>
+	</body>
+</html>

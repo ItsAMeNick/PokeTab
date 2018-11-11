@@ -1,0 +1,100 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="./clear.js"></script>
+		<script type="text/javascript" src="./js/function/checkFirst.js"></script>
+		<script type="text/javascript" src="./js/pokemon_data.js"></script>
+		<script type="text/javascript" src="./js/pokemon.js"></script>
+		<style>
+			@font-face {
+				font-family: "Pokemon GB";
+				src: "/fonts/Pokemon GB.tff";
+			}
+
+			button {
+				height: 30px;
+				width: 30px;
+				outline: none;
+			}
+			body {
+				width: 300px;
+				height: 400px;
+				position: relative;
+				vertical-align: middle;
+				font-family: 'Pokemon GB';
+
+				background: #EDEFED;
+			}
+
+			.namebar {
+				padding-right: 5;
+				padding-left: 5;
+				padding-bottom: 20;
+			}
+
+			.pokemon_name {
+				float: left;
+				font-size: 16;
+			}
+			.pokemon_sex {
+				float: left;
+				font-size: 16;
+			}
+			.pokemon_level {
+				float:right;
+				font-size: 16;
+			}
+			.backdrop {
+				position: relative;
+    			text-align: center;
+			}
+			.pokemon_image {
+				float: none;
+				position: absolute;
+				transform: scale(1.5);
+				bottom: 45px;
+				left: 80px;
+			}
+			.exp_bar {
+				width: 100%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="namebar">
+			<div class="pokemon_name">
+				<span id="pkmn_name"><span>
+			</div>
+			<div class="pokemon_sex">
+				<span id="pkmn_sex"></span>
+			</div>
+			<div class="pokemon_level">
+				<span id="pkmn_level"></span>
+			</div>
+		</div>
+
+		<div class="backdrop">
+			<img src="/images/background.png" alt="Backdrop" id="">
+			<div class="pokemon_image">
+				<img src="" alt="" id="pkmn_image">
+			</div>
+			<progress class="exp_bar" id="exp_bar" value="0" max="0">
+		</div>
+
+		<br/>
+
+		<div>
+			<p id="pkmn_message"></p>
+		</div>
+
+		<script src="./js/function/loadPokemon.js"></script>
+
+		<button id="hatchPokemon"> Hatch </button>
+		<button id="giveEXPPokemon"> Give EXP </button>
+		<button id="forceEvolve"> Evolve </button>
+		<button id="clear"> CLEAR ALL </button>
+	</body>
+	<script type="text/javascript" src="./main.js"></script>
+</html>
