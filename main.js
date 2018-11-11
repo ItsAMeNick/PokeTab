@@ -1,6 +1,5 @@
 //Clear badge when PokeTab is opened
 chrome.browserAction.setBadgeText({text: ""});
-chrome.browserAction.setBadgeBackgroundColor({color: "#C0C0C0"});
 
 //Make checks on current pokemon!
 function checkHatch() {
@@ -34,6 +33,21 @@ function checkEvolve() {
 		}
 	});
 }
+
+function checkGetEgg() {
+	chrome.browserAction.getBadgeBackgroundColor({}, function(result) {
+		console.log();
+		var color = result[0].toString(16) +
+					result[1].toString(16) +
+					result[2].toString(16)
+		if (color === "dc143c") {
+			alert("You've found an egg!");
+			chrome.browserAction.setBadgeBackgroundColor({color: "#C0C0C0"});
+		}	
+	});
+}
+
+
 
 function hatchCurrent() {
 	console.log("Hatching Egg");
@@ -83,6 +97,7 @@ chrome.storage.sync.get(['currentPokemon'], function(result) {
 		checkHatch();
 		checkLevelUp();
 		checkEvolve();
+		checkGetEgg();
 	}
 })
 
