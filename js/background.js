@@ -22,8 +22,15 @@ function updatePokemon(pkmn) {
 		}
 }
 
+function checkForEgg() {
+	if (Math.random()*100 < 1.95) {
+		chrome.browserAction.setBadgeBackgroundColor({color: "#DC143C"});
+	}
+}
+
 chrome.tabs.onCreated.addListener(function() {
 	chrome.storage.sync.get(['currentPokemon'], updatePokemon);
+	checkForEgg();
 });
 
 chrome.tabs.onActivated.addListener(function() {

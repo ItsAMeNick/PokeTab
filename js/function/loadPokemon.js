@@ -17,10 +17,15 @@ chrome.storage.sync.get('currentPokemon', function(result) {
 
 		//Fill in the exp bar
 		if (!pkmn.isEgg) {
-			var exp_lower = level_curves[pkmn.curve](pkmn.level);
-			var exp_upper = level_curves[pkmn.curve](pkmn.level+1);
-			document.getElementById('exp_bar').value = pkmn.exp-exp_lower;
-			document.getElementById('exp_bar').max = exp_upper-exp_lower;
+			if (pkmn.level === 100) {
+				document.getElementById('exp_bar').value = 100;
+				document.getElementById('exp_bar').max = 100;
+			} else {
+				var exp_lower = level_curves[pkmn.curve](pkmn.level);
+				var exp_upper = level_curves[pkmn.curve](pkmn.level+1);
+				document.getElementById('exp_bar').value = pkmn.exp-exp_lower;
+				document.getElementById('exp_bar').max = exp_upper-exp_lower;
+			}
 		} else {
 			document.getElementById('exp_bar').value = pokemon_data[pkmn.dex].egg_cycles - pkmn.eggCycles;
 			document.getElementById('exp_bar').max = pokemon_data[pkmn.dex].egg_cycles;

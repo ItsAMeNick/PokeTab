@@ -1,5 +1,6 @@
 //Clear badge when PokeTab is opened
 chrome.browserAction.setBadgeText({text: ""});
+chrome.browserAction.setBadgeBackgroundColor({color: "#C0C0C0"});
 
 //Make checks on current pokemon!
 function checkHatch() {
@@ -71,7 +72,7 @@ function giveEXPCurrent() {
 	console.log("Giving EXP");
 	chrome.storage.sync.get(['currentPokemon'], function(result) {
 		pkmn = new Pokemon(result.currentPokemon);
-		pkmn.exp += 10000;
+		pkmn.exp += 100000;
 		chrome.storage.sync.set({'currentPokemon': pkmn});
 	});
 	location.reload();

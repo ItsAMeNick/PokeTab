@@ -166,7 +166,10 @@ class Pokemon {
 
 	levelMatch() {
 		this.level = exp_curves[this.curve](this.exp);
-		if (this.level > 100) this.level = 100;
+		if (this.level > 100) {
+			this.level = 100;
+			this.exp = level_curves[this.curve](100);
+		}
 	}
 
 	levelSet(lv) {
