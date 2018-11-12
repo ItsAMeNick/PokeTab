@@ -1,6 +1,6 @@
 console.log("GETTING FIRST EGG");
 
-chrome.storage.sync.set({'first_time': true});
+chrome.storage.local.set({'first_time': true});
 
 var first_dex = 1;
 var random_number = Math.random();
@@ -15,9 +15,9 @@ if (random_number > 0.67) {
 
 var pkmn = new Pokemon(first_dex);
 
-chrome.storage.sync.set({'currentPokemon': pkmn.id})
+chrome.storage.local.set({'currentPokemon': pkmn.id})
 var p = {};
 p[String(pkmn.id)] = pkmn;
-chrome.storage.sync.set({'pc': p});
+chrome.storage.local.set({'pc': p});
 
 window.location = "../../main.html";

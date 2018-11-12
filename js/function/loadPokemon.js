@@ -1,8 +1,6 @@
-chrome.storage.sync.get(['currentPokemon','pc'], function(result) {
-	var current_id = result.currentPokemon;
-	var pkmn = result.pc[current_id];
-	if (pkmn) {
-		pkmn = new Pokemon(pkmn);
+chrome.storage.local.get(['currentPokemon','pc'], function(result) {
+	if (result.currentPokemon) {
+		pkmn = new Pokemon(result.pc[result.currentPokemon]);
 		console.log(pkmn);
 
 		//Handle Name, sex, and level display
@@ -53,9 +51,7 @@ chrome.storage.sync.get(['currentPokemon','pc'], function(result) {
 		}
 		document.getElementById('pkmn_message').innerHTML = message;
 
-		chrome.storage.sync.get(['pc'], function(result) {
-			document.getElementById('egg').innerHTML = "You Have: " + result.pc.length + " eggs";
-		})
+		document.getElementById('egg').innerHTML = "You Have: " + Object.keys(result.pc).length + " Pokemon!";
 
 	} else {
 		console.log("YAINT POKEMON");	

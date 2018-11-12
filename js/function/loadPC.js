@@ -1,4 +1,4 @@
-chrome.storage.sync.get(['pc'], function(result) {
+chrome.storage.local.get(['pc'], function(result) {
 	pc_data = result.pc;
 	for (var p in pc_data) {
 		var pkmn = document.createElement('div');
@@ -42,3 +42,15 @@ chrome.storage.sync.get(['pc'], function(result) {
 		document.getElementById('pc').appendChild(pkmn);
 	}
 });
+
+// Hatch all eggs
+// chrome.storage.local.get(['pc'], function(r) {
+// 	var a = r.pc;
+// 	for (i in a) {
+// 		console.log(a[i]);
+// 		var t = new Pokemon(a[i]);
+// 		t.hatch();
+// 		a[i] = t;
+//     }
+// 	chrome.storage.local.set({'pc': a});
+// });

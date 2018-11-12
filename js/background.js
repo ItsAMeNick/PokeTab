@@ -17,7 +17,7 @@ function updatePokemon(data) {
 				pkmn.exp += tab_exp[pkmn.level];
 			}
 			data.pc[data.currentPokemon] = pkmn;
-			chrome.storage.sync.set({'pc': data.pc});
+			chrome.storage.local.set({'pc': data.pc});
 			updateBadge();
 		}
 }
@@ -29,10 +29,10 @@ function checkForEgg() {
 }
 
 chrome.tabs.onCreated.addListener(function() {
-	chrome.storage.sync.get(['currentPokemon', 'pc'], updatePokemon);
+	chrome.storage.local.get(['currentPokemon', 'pc'], updatePokemon);
 	checkForEgg();
 });
 
 chrome.tabs.onActivated.addListener(function() {
-	chrome.storage.sync.get(['currentPokemon', 'pc'], updatePokemon);
+	chrome.storage.local.get(['currentPokemon', 'pc'], updatePokemon);
 });
