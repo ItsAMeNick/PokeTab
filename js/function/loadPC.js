@@ -1,44 +1,75 @@
-var egg_position = 1;
-
 var sort_function = {
-	"LvH" : function(p1, p2) {
-		p1 = pc_data[p1];
-		p2 = pc_data[p2];
-		if(p1.isEgg) return -egg_position;
-		if(p2.isEgg) return egg_position;
-		return p2.level - p1.level;
+	"top": {
+		"LvH" : function(p1, p2) {
+			p1 = pc_data[p1];
+			p2 = pc_data[p2];
+			if(p1.isEgg) return -1;
+			if(p2.isEgg) return 1;
+			return p2.level - p1.level;
+		},
+		"LvL" : function(p1, p2) {
+			p1 = pc_data[p1];
+			p2 = pc_data[p2];
+			if(p1.isEgg) return -1;
+			if(p2.isEgg) return 1;
+			return p1.level - p2.level;
+		},
+		"DexH" : function(p1, p2) {
+			p1 = pc_data[p1];
+			p2 = pc_data[p2];
+			if(p1.isEgg) return -1;
+			if(p2.isEgg) return 1;
+			return p2.dex - p1.dex;
+		},
+		"DexL" : function(p1, p2) {
+			p1 = pc_data[p1];
+			p2 = pc_data[p2];
+			if(p1.isEgg) return -1;
+			if(p2.isEgg) return 1;
+			return p1.dex - p2.dex;
+		}
 	},
-	"LvL" : function(p1, p2) {
-		p1 = pc_data[p1];
-		p2 = pc_data[p2];
-		if(p1.isEgg) return -egg_position;
-		if(p2.isEgg) return egg_position;
-		return p1.level - p2.level;
-	},
-	"DexH" : function(p1, p2) {
-		p1 = pc_data[p1];
-		p2 = pc_data[p2];
-		if(p1.isEgg) return -egg_position;
-		if(p2.isEgg) return egg_position;
-		return p2.dex - p1.dex;
-	},
-	"DexL" : function(p1, p2) {
-		p1 = pc_data[p1];
-		p2 = pc_data[p2];
-		if(p1.isEgg) return -egg_position;
-		if(p2.isEgg) return egg_position;
-		return p1.dex - p2.dex;
+	"bottom": {
+		"LvH" : function(p1, p2) {
+			p1 = pc_data[p1];
+			p2 = pc_data[p2];
+			if(p1.isEgg) return 1;
+			if(p2.isEgg) return -1;
+			return p2.level - p1.level;
+		},
+		"LvL" : function(p1, p2) {
+			p1 = pc_data[p1];
+			p2 = pc_data[p2];
+			if(p1.isEgg) return 1;
+			if(p2.isEgg) return -1;
+			return p1.level - p2.level;
+		},
+		"DexH" : function(p1, p2) {
+			p1 = pc_data[p1];
+			p2 = pc_data[p2];
+			if(p1.isEgg) return 1;
+			if(p2.isEgg) return -1;
+			return p2.dex - p1.dex;
+		},
+		"DexL" : function(p1, p2) {
+			p1 = pc_data[p1];
+			p2 = pc_data[p2];
+			if(p1.isEgg) return 1;
+			if(p2.isEgg) return -1;
+			return p1.dex - p2.dex;
+		}
 	}
 }
 
 
-chrome.storage.local.get(['pc', 'pcSort'], function(result) {
+chrome.storage.local.get(['pc', 'pcSort', 'eggPosition'], function(result) {
 	pc_data = result.pc;
 
 	if (!result.pcSort) result.pcSort = "DexL";
-	var sorted_p = Object.keys(pc_data).sort(sort_function[result.pcSort]);
+	if (!result.eggPosition) result.eggPosition = "bottom";
+	var sorted_p = Object.keys(pc_data).sort(sort_function[result.eggPosition][result.pcSort]);
 
-	var doing_eggs = egg_position > 0;
+	var doing_eggs = result.eggPosition == "top";
 
 	for (var i in sorted_p) {
 		if (doing_eggs) {
