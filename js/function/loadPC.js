@@ -49,7 +49,7 @@ chrome.storage.local.get(['pc'], function(result) {
 	}
 });
 
-// Hatch all eggs
+// //Hatch all eggs
 // chrome.storage.local.get(['pc'], function(r) {
 // 	var a = r.pc;
 // 	for (i in a) {
