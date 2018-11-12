@@ -131,3 +131,4 @@ document.getElementById("clear").addEventListener("click", function() {
 document.getElementById("hatchPokemon").addEventListener("click", hatchCurrent, false);
 document.getElementById("giveEXPPokemon").addEventListener("click", giveEXPCurrent, false);
 document.getElementById("forceEvolve").addEventListener("click", evolveCurrent, false);
+document.getElementById("pc").addEventListener("click", function() {window.location = './html/pc.html'}, false);

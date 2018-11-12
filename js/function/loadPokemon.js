@@ -4,10 +4,10 @@ chrome.storage.sync.get('currentPokemon', function(result) {
 		pkmn = new Pokemon(pkmn);
 		console.log(pkmn);
 
-		//Handle Name, gender, and level display
+		//Handle Name, sex, and level display
 		document.getElementById('pkmn_name').innerHTML = pkmn.name;
 		if (!pkmn.isEgg) {
-			document.getElementById('pkmn_sex').innerHTML = pkmn.gender;
+			document.getElementById('pkmn_sex').innerHTML = pkmn.sex;
 			document.getElementById('pkmn_level').innerHTML = "Lv." + pkmn.level;
 		}
 

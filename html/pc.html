@@ -1,0 +1,74 @@
+<DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="../js/pokemon_data.js"></script>
+		<script type="text/javascript" src="../js/pokemon.js"></script>
+		<style>
+			@font-face {
+				font-family: "PokemonGB";
+				src: url("../fonts/PokemonGB.ttf");
+			}
+
+			body {		
+				vertical-align: middle;
+				font-family: 'PokemonGB';
+
+				background: #EDEFED;
+			}
+			.pc_box {
+				width: 300px;
+				height: 400px;
+				overflow-y: scroll;	
+			}
+
+			.title {
+				font-size: 14pt;
+			}
+			.pokemon_card {
+				width: 90px;
+				height: 90px;
+				float: left;
+				border: 1px black solid;
+			}
+			.pkmn_image {
+				transform: scale(.75);
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 5px;
+				height: 50px;
+			}
+			.pkmn_sex {
+				padding-left: 5px;
+				float: left;
+				font-size: 12;
+			}
+			.pkmn_level {
+				padding-right: 5px;
+				float: right;
+				font-size: 12;
+			}
+			.pkmn_shiny {
+				padding-left: 26px;
+				font-size: 16;
+			}
+		</style>
+
+	</head>
+
+	<body>
+	<div class="pc_box">
+		<div>
+			<p class="title">
+				Pokemon Storage
+			</p>
+			<hr>
+		</div>
+
+		<div id="pc"></div>
+
+
+		<script src="../js/function/loadPC.js"></script>
+	</div>
+	</body>
+</html>

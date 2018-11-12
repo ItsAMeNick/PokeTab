@@ -23,7 +23,7 @@ function updatePokemon(pkmn) {
 }
 
 function checkForEgg() {
-	if (Math.random()*100 < 1.95) {
+	if (Math.random()*100 < 8) {
 		chrome.browserAction.setBadgeBackgroundColor({color: "#DC143C"});
 	}
 }

@@ -1,6 +1,8 @@
 class Pokemon {
 	constructor(data, isEgg=true) {
 		if (Number.isInteger(data)) {
+			this.id = Math.floor(Math.random()*100000);
+
 			this.dex = data;
 			this.isShiny = (Math.floor(Math.random()*8192) === 617);
 			if (isEgg) {
@@ -10,9 +12,9 @@ class Pokemon {
 			}
 
 			if (Math.random() > pokemon_data[data].gender_ratio) {
-				this.gender = "&#9792;"; //Female
+				this.sex = "&#9792;"; //Female
 			} else {
-				this.gender = "&#9794;"; //Male
+				this.sex = "&#9794;"; //Male
 			}
 
 			this.isEgg = isEgg;
@@ -46,10 +48,11 @@ class Pokemon {
 			this.evo_to = pokemon_data[data].evolution_p;
 
 		} else {
+			this.id = 			data.id;
 			this.dex =			data.dex;
 			this.isShiny =		data.isShiny;
 			this.name =			data.name;
-			this.gender =		data.gender;
+			this.sex =			data.sex;
 			this.isEgg =		data.isEgg;
 			this.eggCycles =	data.eggCycles;
 			this.sprite = 		data.sprite;
