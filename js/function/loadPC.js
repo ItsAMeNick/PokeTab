@@ -2,6 +2,7 @@ chrome.storage.local.get(['pc'], function(result) {
 	pc_data = result.pc;
 	for (var p in pc_data) {
 		var pkmn = document.createElement('div');
+		pkmn.id = p;
 		pkmn.className = "pokemon_card";
 
 		var image = document.createElement('img');
@@ -38,6 +39,11 @@ chrome.storage.local.get(['pc'], function(result) {
 			pkmn.appendChild(shiny);
 			pkmn.appendChild(level);
 		}
+
+		pkmn.addEventListener('click', function() {
+			chrome.storage.local.set({'currentPokemon': this.id});
+			window.location = '../main.html';
+		});
 
 		document.getElementById('pc').appendChild(pkmn);
 	}
