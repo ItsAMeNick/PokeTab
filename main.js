@@ -62,7 +62,7 @@ function checkNewPokemon() {
 			console.log(result.pc);
 			chrome.storage.local.set({'pc': result.pc});
 
-			document.getElementById('egg_notification').innerHTML = "You've found " + result.newPokemon.name;
+			document.getElementById('egg_notification').innerHTML = "You've found an Egg";
 			document.getElementById('notification').show();
 
 			chrome.storage.local.set({'newPokemon': null});
@@ -101,7 +101,6 @@ function levelUpCurrent() {
 	console.log("Leveling up Pokemon");
 	chrome.storage.local.get(['currentPokemon', 'pc'], function(result) {
 		pkmn = new Pokemon(result.pc[result.currentPokemon]);
-		//pkmn.levelSet(10);
 		pkmn.levelMatch();
 		result.pc[result.currentPokemon] = pkmn;
 		chrome.storage.local.set({'pc': result.pc});

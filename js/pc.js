@@ -36,5 +36,3 @@ document.getElementById("sort_level").addEventListener("click", function() {
 	});
 	location.reload();
 }, false);
-
-//DexL
