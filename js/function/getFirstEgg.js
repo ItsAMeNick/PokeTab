@@ -15,7 +15,9 @@ if (random_number > 0.67) {
 
 var pkmn = new Pokemon(first_dex);
 
-chrome.storage.sync.set({'currentPokemon': pkmn})
-chrome.storage.sync.set({'pc': []});
+chrome.storage.sync.set({'currentPokemon': pkmn.id})
+var p = {};
+p[String(pkmn.id)] = pkmn;
+chrome.storage.sync.set({'pc': p});
 
 window.location = "../../main.html";

@@ -1,5 +1,6 @@
-chrome.storage.sync.get('currentPokemon', function(result) {
-	pkmn = result.currentPokemon;
+chrome.storage.sync.get(['currentPokemon','pc'], function(result) {
+	var current_id = result.currentPokemon;
+	var pkmn = result.pc[current_id];
 	if (pkmn) {
 		pkmn = new Pokemon(pkmn);
 		console.log(pkmn);

@@ -8,16 +8,16 @@ function updateBadge() {
 	});
 }
 
-function updatePokemon(pkmn) {
-	if (pkmn) {
-			pkmn = new Pokemon(pkmn.currentPokemon);
+function updatePokemon(data) {
+	if (data) {
+			var pkmn = data.pc[data.currentPokemon];
 			if (pkmn.isEgg) {
 				pkmn.eggCycles -= 1;
-				chrome.storage.sync.set({'currentPokemon': pkmn});
 			} else {
 				pkmn.exp += tab_exp[pkmn.level];
-				chrome.storage.sync.set({'currentPokemon': pkmn});
 			}
+			data.pc[data.currentPokemon] = pkmn;
+			chrome.storage.sync.set({'pc': data.pc});
 			updateBadge();
 		}
 }
@@ -29,10 +29,10 @@ function checkForEgg() {
 }
 
 chrome.tabs.onCreated.addListener(function() {
-	chrome.storage.sync.get(['currentPokemon'], updatePokemon);
+	chrome.storage.sync.get(['currentPokemon', 'pc'], updatePokemon);
 	checkForEgg();
 });
 
 chrome.tabs.onActivated.addListener(function() {
-	chrome.storage.sync.get(['currentPokemon'], updatePokemon);
+	chrome.storage.sync.get(['currentPokemon', 'pc'], updatePokemon);
 });
