@@ -48,9 +48,9 @@ function checkGetEgg() {
 				var new_pkmn = createNewEgg();
 				result.pc[new_pkmn.id] = new_pkmn;
 				chrome.storage.local.set({'newPokemon': new_pkmn});
+				location.reload();
 			});
 		}
-		checkNewPokemon();
 	});
 }
 

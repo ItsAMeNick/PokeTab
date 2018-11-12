@@ -1,6 +1,63 @@
-chrome.storage.local.get(['pc'], function(result) {
+var egg_position = 1;
+
+var sort_function = {
+	"LvH" : function(p1, p2) {
+		p1 = pc_data[p1];
+		p2 = pc_data[p2];
+		if(p1.isEgg) return -egg_position;
+		if(p2.isEgg) return egg_position;
+		return p2.level - p1.level;
+	},
+	"LvL" : function(p1, p2) {
+		p1 = pc_data[p1];
+		p2 = pc_data[p2];
+		if(p1.isEgg) return -egg_position;
+		if(p2.isEgg) return egg_position;
+		return p1.level - p2.level;
+	},
+	"DexH" : function(p1, p2) {
+		p1 = pc_data[p1];
+		p2 = pc_data[p2];
+		if(p1.isEgg) return -egg_position;
+		if(p2.isEgg) return egg_position;
+		return p2.dex - p1.dex;
+	},
+	"DexL" : function(p1, p2) {
+		p1 = pc_data[p1];
+		p2 = pc_data[p2];
+		if(p1.isEgg) return -egg_position;
+		if(p2.isEgg) return egg_position;
+		return p1.dex - p2.dex;
+	}
+}
+
+
+chrome.storage.local.get(['pc', 'pcSort'], function(result) {
 	pc_data = result.pc;
-	for (var p in pc_data) {
+
+	if (!result.pcSort) result.pcSort = "DexL";
+	var sorted_p = Object.keys(pc_data).sort(sort_function[result.pcSort]);
+
+	var doing_eggs = egg_position > 0;
+
+	for (var i in sorted_p) {
+		if (doing_eggs) {
+			if (!pc_data[sorted_p[i]].isEgg) {
+				doing_eggs = false;
+				var gap = document.createElement('hr');
+				gap.className = "gap";
+				document.getElementById('pc').appendChild(gap);
+			}
+		} else {
+			if (pc_data[sorted_p[i]].isEgg) {
+				doing_eggs = true;
+				var gap = document.createElement('hr');
+				gap.className = "gap";
+				document.getElementById('pc').appendChild(gap);
+			}
+		}
+
+		var p = sorted_p[i];
 		var pkmn = document.createElement('div');
 		pkmn.id = p;
 		pkmn.className = "pokemon_card";

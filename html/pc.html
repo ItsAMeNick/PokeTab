@@ -9,31 +9,40 @@
 				src: url("../fonts/PokemonGB.ttf");
 			}
 
-			body {		
+			body {	
+				width: 300px;
+				height:400px;	
 				vertical-align: middle;
 				font-family: 'PokemonGB';
 
 				background: #EDEFED;
 			}
 
-			.pc_box {
+			.pc_storage {
 				width: 300px;
-				height: 400px;
-				overflow-y: scroll;	
+				height: 300px;
+				overflow-y: scroll;
+				overflow-x: hidden;	
+				border: 1px black solid;
 			}
 
 			.title {
 				font-size: 14pt;
 			}
 			.pokemon_card {
-				width: 90px;
-				height: 90px;
+				width: 92px;
+				height: 92px;
 				float: left;
 				border: 1px black solid;
 			}
 			.pokemon_card:hover {
 				background: #BDBDBD;
 			}
+			.gap {
+				float: none;
+				width: 100%;
+			}
+
 			.pkmn_image {
 				transform: scale(.75);
 				display: block;
@@ -61,7 +70,6 @@
 	</head>
 
 	<body>
-	<div class="pc_box">
 		<div>
 			<p class="title">
 				Pokemon Storage
@@ -69,10 +77,11 @@
 			<hr>
 		</div>
 
-		<div id="pc"></div>
+		<div class="pc_storage">
 
+			<div id="pc"></div>
+			<script src="../js/function/loadPC.js"></script>
 
-		<script src="../js/function/loadPC.js"></script>
-	</div>
+		</div>
 	</body>
 </html>
