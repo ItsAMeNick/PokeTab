@@ -12,7 +12,7 @@ function updatePokemon(data) {
 	if (data) {
 			var pkmn = data.pc[data.currentPokemon];
 			if (pkmn.isEgg) {
-				pkmn.eggCycles -= 1;
+				pkmn.eggCycles -= (5 * Math.random());
 			} else {
 				pkmn.exp += tab_exp[pkmn.level];
 			}

@@ -125,7 +125,7 @@ function giveEXPCurrent() {
 	console.log("Giving EXP");
 	chrome.storage.local.get(['currentPokemon','pc'], function(result) {
 		pkmn = new Pokemon(result.pc[result.currentPokemon]);
-		pkmn.exp += 100000;
+		pkmn.exp += Math.random()*100000;
 		result.pc[result.currentPokemon] = pkmn;
 		chrome.storage.local.set({'pc': result.pc});
 	});
