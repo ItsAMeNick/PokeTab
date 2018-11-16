@@ -32,12 +32,12 @@ class Pokemon {
 
 			this.level = 1;
 			this.iv = {
-				"sp_defense": Math.floor(Math.random()*32),
-				"sp_attack": Math.floor(Math.random()*32),
-				"speed": Math.floor(Math.random()*32),
-				"defense": Math.floor(Math.random()*32),
-				"attack": Math.floor(Math.random()*32),
-				"hp": Math.floor(Math.random()*32)
+				"sp_defense": Math.floor((1-(Math.random()**2))*32),
+				"sp_attack": Math.floor((1-(Math.random()**2))*32),
+				"speed": Math.floor((1-(Math.random()**2))*32),
+				"defense": Math.floor((1-(Math.random()**2))*32),
+				"attack": Math.floor((1-(Math.random()**2))*32),
+				"hp": Math.floor((1-(Math.random()**2))*32)
 			}
 			this.character = this.determineNature(this.iv);
 
