@@ -76,10 +76,8 @@ function checkNewPokemon() {
 
 function forceGiveEgg() {
 	chrome.storage.local.get(['pc'], function(result) {
-		for (var i = 0; i<50;i++) {
-			var new_pkmn = createNewEgg();
-			result.pc[new_pkmn.id] = new_pkmn;
-		}
+		var new_pkmn = createNewEgg();
+		result.pc[new_pkmn.id] = new_pkmn;
 		chrome.storage.local.set({'pc': result.pc});
 	});
 	location.reload();
@@ -176,3 +174,17 @@ document.getElementById('close_notification').addEventListener('click', function
 	document.getElementById('notification').close();
 }, false);
 document.getElementById("pc").addEventListener("click", function() {window.location = './html/pc.html'}, false);
+
+document.getElementById('rate').addEventListener('click', function() {
+	chrome.storage.local.get(['currentPokemon','pc'], function(result) {
+		var pkmn = new Pokemon(result.pc[result.currentPokemon]);
+		document.getElementById('rate_notification').innerHTML = pkmn.evaluate_tex();
+		console.log(pkmn.evaluate_val());
+		document.getElementById('notification_rate').show();
+	});
+}, false);
+document.getElementById('close_notification_rate').addEventListener('click', function() {
+	document.getElementById('rate_notification').innerHTML = "";
+
+	document.getElementById('notification_rate').close();
+}, false);

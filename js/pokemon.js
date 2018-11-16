@@ -198,4 +198,22 @@ class Pokemon {
 			console.log("THIS POKEMON CANNOT EVOLVE!")
 		}
 	}
+
+	evaluate_val() {
+		var sum_iv = 0;
+		for (var i in this.iv) {
+			sum_iv += this.iv[i];
+		}
+		return (sum_iv/1.86).toFixed(1);
+	}
+
+	evaluate_tex() {
+		var val = this.evaluate_val();
+		if (val > 99) return "Your "+this.name+" is absolut perfection!";
+		else if (val >= 82.2) return "Your "+this.name+" is one of the best!";
+		else if (val >= 66.7) return "Your "+this.name+" is above average!";
+		else if (val >= 51.1) return "Your "+this.name+" is a decent Pokemon.";
+		else if (val >= 40.1) return "Your "+this.name+" is below average.";
+		else return "Your "+this.name+" trys its best!";
+	}
 };
