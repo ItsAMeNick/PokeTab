@@ -4,7 +4,7 @@ class Pokemon {
 			this.id = Math.floor(Math.random()*100000);
 
 			this.dex = data;
-			this.isShiny = (Math.floor(Math.random()*450) == 413);
+			this.isShiny = (Math.floor(Math.random()*100) <= 1);
 			if (isEgg) {
 				this.name = "Egg";
 			} else {

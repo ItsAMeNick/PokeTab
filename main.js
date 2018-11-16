@@ -76,8 +76,10 @@ function checkNewPokemon() {
 
 function forceGiveEgg() {
 	chrome.storage.local.get(['pc'], function(result) {
-		var new_pkmn = createNewEgg();
-		result.pc[new_pkmn.id] = new_pkmn;
+		for (var i = 0; i<50;i++) {
+			var new_pkmn = createNewEgg();
+			result.pc[new_pkmn.id] = new_pkmn;
+		}
 		chrome.storage.local.set({'pc': result.pc});
 	});
 	location.reload();
