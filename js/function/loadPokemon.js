@@ -1,3 +1,5 @@
+var flight_list = [12,15,17,41,42]
+
 chrome.storage.local.get(['currentPokemon','pc'], function(result) {
 	if (result.currentPokemon) {
 		pkmn = new Pokemon(result.pc[result.currentPokemon]);
@@ -17,6 +19,9 @@ chrome.storage.local.get(['currentPokemon','pc'], function(result) {
 		//Add egg animation
 		if (pkmn.isEgg) {
 			document.getElementById('image_class').classList.add("egg_image");
+		}
+		if (flight_list.indexOf(pkmn.dex) != -1) {
+			document.getElementById('image_class').classList.add("flying");
 		}
 
 		//Fill in the exp bar
